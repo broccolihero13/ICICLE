@@ -1,0 +1,59 @@
+{
+  "name": "Icicle",
+  "short_name": "Integrated Canvas Improved Click Less Environment",
+  "description": "Tool for those who utilize Remote Admin to increase their efficiency in Canvas",
+  "manifest_version":2,
+  "version": "0.0.0.1",
+  "content_security_policy":"script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "icons": {
+    "16": "shared/icons/RemoteControl-16.png",
+    "48": "shared/icons/Icicle.png"
+  },
+  "permissions":[ "tabs","activeTab","storage","declarativeContent","https://*.instructure.com/*"],
+  "options_page":"shared/window.html",
+  "page_action":{
+    "default_title":"Remote Admin Tool",
+    "default_icon":"shared/icons/Icicle.png",
+    "default_popup":"page_actions.html"
+  },
+  "web_accessible_resources":[
+    "shared/*",
+    "js/*",
+    "css/*"
+  ],
+  "background":{
+    "page":"shared/background.html",
+    "persistent":false
+  },
+  "content_scripts":[
+    {
+      "matches":["https://*.instructure.com/*"],
+      "js":["shared/js/libs/jquery.min.js","shared/js/content.js"]
+    },
+    {
+      "matches":["https://*.instructure.com/accounts/*/users/*","https://*.instructure.com/users/*"],
+      "js":["js/tweaks/inactivate_enrollmentsUI.js", "shared/js/tweaks/user_tweaks.js"]
+    },
+    {
+      "matches":["https://*.instructure.com/courses/*"],
+      "js":["shared/js/tweaks/course_tweaks.js"]
+    },
+    {
+      "matches":["https://*.instructure.com/courses/*/settings*"],
+      "js":["shared/js/tweaks/course_settings_tweaks.js"]
+    },
+    {
+      "matches":["https://*.instructure.com/accounts/*/terms*"],
+      "js":["shared/js/tweaks/term_list_tweaks.js"]
+    },
+    {
+      "matches":["https://*.instructure.com/accounts/*"],
+      "js":["shared/js/tweaks/course_list_tweaks.js"],
+      "cs":["css/account_tweaks.css"]
+    },
+    {
+      "matches":["https://*.instructure.com/courses/*/sections/*","https://*.instructure.com/courses/*/settings"],
+      "js":["shared/js/tweaks/section_xlist_extra.js"]
+    }
+  ]
+}

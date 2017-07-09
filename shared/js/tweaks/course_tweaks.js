@@ -1,0 +1,4 @@
+$(document).ready(function() {
+  // Add course search to the course page
+  $('#right-side-wrapper').prepend('<div class="remoteAdminTool"><h2 id="user_name_label">Search for a Course</h2><div class="rs-margin-bottom"><form id="new_course" class="ic-Form-control account_search_form" action="/accounts/1/courses" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><div class="ic-Input-group"><input name="focus" type="hidden" value="course_name"><input id="course_name" type="text" name="course[name]" class="ic-Input ui-autocomplete-input" value="" data-autocomplete-source="/accounts/1/courses" aria-labelledby="course_name_label" autocomplete="off"><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><button class="Button">Go</button></div></form></div></div>');
+});

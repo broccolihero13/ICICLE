@@ -1,0 +1,31 @@
+html,body {
+    width: 315px !important;
+    height: 200px !important;
+}
+.row {
+  margin-left: 15px !important;
+}
+
+#outcome_guids,#time_zone {
+  width: 200px !important;
+}
+
+.tab-content>.active {
+    margin-top: 10px;
+}
+
+#saving_changes { display: none; }
+
+
+#reveal_mobile_branding {
+    display: none;
+}
+
+#reveal_branding_theme {
+    display: none;
+}
+
+.fyinotes {
+    font-size: smaller;
+    padding: .5px;
+}

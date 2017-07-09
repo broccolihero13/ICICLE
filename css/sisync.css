@@ -1,0 +1,15 @@
+#export_templates .form-control {
+    font-size: 12px !important;
+}
+
+.toggler {
+    padding-top: 10px;
+}
+
+.togglee {
+    font-size: .7em;
+}
+
+.account-sis-id {
+    color: gray;
+}
