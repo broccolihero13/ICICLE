@@ -3,7 +3,7 @@
   "short_name": "Integrated Canvas Improved Click Less Environment",
   "description": "Tool for those who utilize Remote Admin to increase their efficiency in Canvas",
   "manifest_version":2,
-  "version": "0.0.0.1",
+  "version": "0.0.0.3",
   "content_security_policy":"script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "icons": {
     "16": "shared/icons/RemoteControl-16.png",
@@ -54,6 +54,10 @@
     {
       "matches":["https://*.instructure.com/courses/*/sections/*","https://*.instructure.com/courses/*/settings"],
       "js":["shared/js/tweaks/section_xlist_extra.js"]
+    },
+    {
+      "matches":["https://*.instructure.com/accounts/*/users/*", "https://*.instructure.com/users/*"],
+      "js":["js/tweaks/userTweaks.js"]
     }
   ]
 }

@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   if (window.location.pathname.indexOf("users") > -1) {
     var user_canvas_id = $('table[data-user-id]').data('user-id');
-    var enrollment_host = "https://" + window.location.hostname + "/api/v1/users/" + user_canvas_id + "/enrollments";
+    var enrollment_host = "https://" + window.location.hostname + "/api/v1/users/" + user_canvas_id + "/enrollments?per_page=100";
     var enrollments_for_user = [];
     var enrollment_state;
 
