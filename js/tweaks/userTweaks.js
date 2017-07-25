@@ -8,9 +8,9 @@ $(document).ready(function(){
       sis_import_id = data.sis_import_id;
       console.log(sis_import_id);
       if(sis_import_id!=null){
-        str = '<tr><th>Debug Info</th><td>Last Modified by SIS Import <a href="/api/v1/accounts/self/sis_imports/'+sis_import_id+'"target="_new">'+ sis_import_id+'</a></td></tr>';
+        str = '<tr class="remoteAdminTool"><th>Debug Info</th><td>Last Modified by SIS Import <a href="/api/v1/accounts/self/sis_imports/'+sis_import_id+'"target="_new">'+ sis_import_id+'</a></td></tr>';
       }else{
-        str = '<tr><th>Debug Info</th><td>Not Modified by SIS Import</td></tr>';
+        str = '<tr class="remoteAdminTool"><th>Debug Info</th><td>Not Modified by SIS Import</td></tr>';
       }
       $('#name_and_email>table>tbody>tr:last').before(str);
     });
