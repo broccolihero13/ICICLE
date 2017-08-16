@@ -47,6 +47,9 @@ chrome.runtime.onMessage.addListener(
           checkReportStatus(id);
         });
         break;
+      case 'areYouSure':
+        showScary();
+        break;
     }
     return true; // This is needed to allow for asynchronous responses via sendResponse
   });
@@ -156,4 +159,18 @@ let checkReportStatus = (id) => {
       }, 2000);
     }
   });
+};
+
+let showScary = () => {
+  if (confirm("You're about to reveal buttons that can break an instance, are you sure you wish to proceed!? Press 'OK' if you're sure.")) {
+    if (window.location.pathname.indexOf('courses') > -1) {
+      $(document).ready(function() {
+
+        if (window.location.pathname.indexOf('courses') > -1) {
+          $('#decrosslistbutton').show();
+        }
+      });
+
+    }
+  }
 };

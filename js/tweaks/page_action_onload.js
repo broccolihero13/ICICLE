@@ -75,6 +75,21 @@ $(document).ready(function() {
       });
     });
   });
+  $('#areYouSure').click(function(e) {
+    e.preventDefault();
+    chrome.tabs.query({
+      active: true,
+      currentWindow: true
+    }, function(tabs) {
+      var data_2_send = {
+        req: "areYouSure"
+      };
+      add_to_log('Fetching scary buttons...');
+      chrome.tabs.sendMessage(tabs[0].id, data_2_send, function(response) {
+        console.log(response);
+      });
+    });
+  });
   $('#getGradeReport').click(function(e) {
     e.preventDefault();
     chrome.tabs.query({
