@@ -26,11 +26,10 @@ $(document).ready(function() {
                 })
               }).then(() => {
                 console.log(`${section.id} was decross-listed`);
+                if (arr.length - 1 === i) {
+                  console.log(`All sections decrosslisted or no crosslisted sections available`);
+                }
               });
-            }
-            console.log(arr.length, i);
-            if (arr.length - 1 === i) {
-              console.log(`All sections decrosslisted or no crosslisted sections available`);
             }
           });
         });
